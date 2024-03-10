@@ -1,0 +1,349 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Chivo:wght@100&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Chivo:wght@200&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Chivo:wght@300&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Chivo:wght@400&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Chivo:wght@500&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Chivo:wght@600&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Chivo:wght@700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Chivo:wght@800&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Chivo:wght@900&display=swap');
+
+
+
+
+@import url('https://fonts.googleapis.com/css2?family=Rubik+Burned&display=swap');
+
+:root{
+    --shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+    --accent: #ef6629;
+    --accent_hover:#9d3e16;
+}
+
+h1{
+    font-size:26px;
+    font-weight:600;
+    color:black;
+    width:100%;
+    text-align: center;
+}
+
+h4{
+    font-size:15px;
+    font-weight:500px;
+}
+
+
+.message{
+    position:fixed;
+    background: var(--accent);
+    color:white;
+    height:40px;
+    width:20%;
+    margin:auto;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    text-align: center;
+    padding:10px;
+    border-radius: 10px;
+    left: 0; 
+    right: 0; 
+    top:0;
+    margin-left: auto; 
+    margin-right: auto; 
+    animation: fade_out 10s;
+    /* z-index:1000000000000000000000000000000000000000000000; */
+    margin-top:50px;
+    opacity:0;
+    z-index:0;
+}
+
+@keyframes fade_out {
+    from{
+        opacity:1;
+        z-index:1000000000000000000000000000000000000000000000;
+}
+
+    to{
+        opacity:0;
+        z-index:0;
+    }
+}
+
+
+.logo_cont h1{
+    color:white;
+    font-weight:600;
+}
+
+button{
+    font-weight:600;
+    background: var(--accent);
+    border-radius:12px;
+    color:white;
+    cursor:pointer;
+    padding:15px 25px;
+    display:block;
+}
+
+button:hover{
+    background: var(--accent_hover);
+}
+
+button:disabled{
+    background: #0a16506b;
+    cursor:default;
+}
+
+
+.upper{
+    width:100%;
+    height:38.75px;
+    background: #04091e;
+}
+
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family: 'Chivo', sans-serif;
+    /* text-transform: capitalize; */
+    font-weight: 200;
+    transition:.2s;
+    border:none;
+    outline:none;
+    list-style:none;
+    accent-color: #25059b;
+    text-decoration: none;
+}
+
+
+.nav{
+    width:100%;
+    height:119px;
+    padding:1px;
+    position:fixed;
+    top:0;
+    left:0;
+    z-index:100000000;
+    background: transparent;
+    padding-top:1px;
+}
+
+.nav_cont{
+    width:1200px;
+    margin:20px auto;
+    height:30px;
+    display:flex;
+    justify-content: space-between;
+}
+
+h3{
+    color:var(--accent);
+}
+
+.logo_cont{
+    width:200px;
+    height:100%;
+    position:relative;
+    margin-left:60px;
+}
+
+.logo_cont img{
+    width:60px;
+    height:auto;
+    position:absolute;
+    top:-11px;
+}
+
+.menu{
+    width:700px;
+    height:100%;
+}
+
+.menu ul{
+    display:flex;
+    align-items: center;
+    height:100%;
+    justify-content: flex-end;
+}
+
+.menu ul li{
+    /* margin:0 16px; */
+    text-transform: capitalize;
+    margin:0 30px;
+}
+
+.menu a{
+    color:white;
+    font-weight:400;
+    padding:6px 16px;
+    border-radius: 6px;
+    background: var(--accent);
+}
+
+
+
+.hero{
+    min-height:747px;
+    width:100%;
+    background: white;
+    padding-bottom:60px;
+    /* margin-top:148px; */
+}
+
+.nav span{
+    display:block;
+    margin:0px auto;
+    border-bottom:1px solid #39353e;
+    width:1200px;
+}
+
+
+
+
+.img_container{
+    width:100%;
+    height:550px;
+    position:relative;
+    background: url('../images/[Downloader.la]-65e9bd4cab23d.jpg') right;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: 50% 30%;
+}
+
+
+.overlay{
+    position:absolute;
+    width:100%;
+    height:100%;
+    top:0;
+    left:0;
+    z-index: 100;
+    background-color: #121314a7;
+
+}
+
+.container{
+    width:100%;
+    height:400px;
+    margin:100px 0;
+}
+
+.cent{
+    width:1200px;
+    height:100%;
+    margin:0 auto;
+    padding-top:1px;
+}
+
+.user{
+    width:100%;
+    height:30px;
+    margin-top:225px;
+}
+
+.user h1{
+    width:100%;
+    text-align: center;
+    font-size:40px;
+    font-weight:600;
+    color:white;
+}
+
+.navigation{
+    width:100%;
+    height:30px;
+    margin-top:30px;
+    display:flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.navigation a, .navigation i{
+    color:white;
+    margin:0 10px;
+}
+
+.navigation i{
+    font-size:16px;
+}
+
+
+.loader{
+    width:100%;
+    height:100%;
+    position:fixed;
+    background-color: rgba(4, 9, 30, 0.781);
+    z-index:9999999999999;
+    top:0px;
+    left:0;
+    display:flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+}
+
+.loader img{
+    -webkit-animation: rotating 2s linear infinite;
+    -moz-animation: rotating 2s linear infinite;
+    -ms-animation: rotating 2s linear infinite;
+    -o-animation: rotating 2s linear infinite;
+    animation: rotating 2s linear infinite;
+    width:200px;
+    height:auto;
+}
+
+
+
+
+@-webkit-keyframes rotating /* Safari and Chrome */ {
+    from {
+      -webkit-transform: rotate(0deg);
+      -o-transform: rotate(0deg);
+      transform: rotate(0deg);
+    }
+    to {
+      -webkit-transform: rotate(360deg);
+      -o-transform: rotate(360deg);
+      transform: rotate(360deg);
+    }
+  }
+  @keyframes rotating {
+    from {
+      -ms-transform: rotate(0deg);
+      -moz-transform: rotate(0deg);
+      -webkit-transform: rotate(0deg);
+      -o-transform: rotate(0deg);
+      transform: rotate(0deg);
+    }
+    to {
+      -ms-transform: rotate(360deg);
+      -moz-transform: rotate(360deg);
+      -webkit-transform: rotate(360deg);
+      -o-transform: rotate(360deg);
+      transform: rotate(360deg);
+    }
+  }
+
+
+
+  @keyframes fade_in {
+    from{
+      position:relative;
+      opacity:0;
+      bottom:-70px;
+    }
+  
+    to{
+      position:relative;
+      opacity:1;
+      bottom:0;
+      left:0;
+    }
+  }
+  
+
+  
