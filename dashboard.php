@@ -73,7 +73,7 @@ if(isset($_GET["inserted"])){
 
         <div class="actions">
             <div class="ac_cont">
-           <a href="admin_drive.php"> <i class="fa-regular fa-folder"></i></a>
+           <a href="admin_drive.php?course='.$course_code.'"> <i class="fa-regular fa-folder"></i></a>
             </div>
         </div>
     </div>
@@ -157,5 +157,9 @@ if(isset($_GET["inserted"])){
             </div>
         </div>
     </div>
+
+    <?php
+        include "footer.php";
+    ?>
 </body>
 </html>

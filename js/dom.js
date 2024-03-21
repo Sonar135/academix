@@ -61,7 +61,7 @@ lists.forEach(list => {
 });
 
 
-$('#prof').change(function(){
+$('#file').change(function(){
     // Get the selected file
     const file = $(this)[0].files[0];
     

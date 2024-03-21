@@ -154,3 +154,139 @@ table{
     font-size:18px;
     color: var(--accent);
   }
+
+
+  .sec1 button{
+    margin:30px auto;
+  }
+
+
+
+
+
+
+  .edit_overlay{
+    width:100%;
+    height:100%;
+    position:fixed;
+    top:0;
+    left:0;
+    background: #0a165073;
+    z-index:1000000;
+    display:none;
+    justify-content: center;
+    align-items: center;
+    animation: edit .7s;
+    transition:.7s;
+}
+
+@keyframes edit {
+    from{
+        opacity:0;
+    }
+
+    to{
+        opacity:1;
+    }
+}
+
+
+
+
+.edit{
+    height:600px;
+    padding-top:1px;
+}
+
+.edit .cent{
+    height:100%;
+    padding-top:1px;
+    margin-top:100px;
+    
+}
+
+
+
+
+.form_cont{
+  width:350px;
+  margin:30px auto;
+  padding:20px 16px;
+  box-shadow: var(--shadow);
+  position:relative;
+  border-radius: 12px;
+}
+
+.edit h1{
+  color:white;
+}
+
+.form_cont form input{
+  width:300px;
+  height:40px;
+  background: white;
+  box-shadow: var(--shadow);
+  margin:0 auto;
+  border-radius: 12px;
+  padding:16px;
+}
+
+input[type="text"]{
+  display:block;
+}
+
+
+
+input::placeholder{
+  font-weight:500;
+}
+
+form label{
+  width:300px;
+  height:40px;
+  background: var(--accent);
+  box-shadow: var(--shadow);
+  margin:20px auto;
+  border-radius: 12px;
+  color:white;
+  display:flex;
+  justify-content: center;
+  align-items: center;
+  font-weight:500;
+  cursor:pointer;
+}
+
+
+form label:hover{
+  background: var(--accent_hover);
+}
+
+.edit button{
+  margin:10px auto;
+  box-shadow: var(--shadow);
+}
+
+
+
+.exit{
+  width:45px;
+  height:45px;
+  background: #aa0808d5;
+  position:absolute;
+  top:-18px;
+  right:-18px;
+  display:flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 100px;
+  cursor:pointer;
+}
+
+.exit:hover{
+  background: #750a0a;
+}
+
+.exit i{
+  color:white;
+  font-size:25px;
+}

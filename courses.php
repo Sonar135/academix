@@ -4,7 +4,39 @@
 
 
 
+<?php
+    if(isset($_GET["school"])){
+        $school=$_GET["school"];
+    }
 
+    $courses="";
+
+    $get=mysqli_query($conn, "SELECT * from library where school='$school'");
+
+    while($row=mysqli_fetch_array($get)){
+        $course_code=$row["course_code"];
+        $course_title=$row["course_title"];
+
+        $courses.='
+        <div class="school_card">
+        <div class="text">
+            <div class="prof">
+            <i class="fa-solid fa-book"></i>
+            </div>
+            <h1>'.$course_code.'</h1>
+            <h4>'.$course_title.'</h4>
+            <h4>Available Documents: 38</h4>
+        </div>
+
+        <div class="actions">
+            <div class="ac_cont">
+           <a href="admin_drive.php"> <i class="fa-regular fa-folder"></i></a>
+            </div>
+        </div>
+    </div>
+        ';
+    }
+?>
 
 
 
@@ -40,111 +72,8 @@
     <div class="container sec1">
         <h1>Available Courses</h1>
         <div class="cent">
-        <div class="school_card">
-                <div class="text">
-                    <div class="prof">
-                    <i class="fa-solid fa-school"></i>
-                    </div>
-                    <h1>COSC200</h1>
-                    <h4>VB.NET</h4>
-                    <h4>Available Documents: 38</h4>
-                </div>
-
-                <div class="actions">
-                    <div class="ac_cont">
-                   <a href="drive.php"> <i class="fa-regular fa-folder"></i></a>
-                    </div>
-                </div>
-            </div>
-
-
-            <div class="school_card">
-                <div class="text">
-                    <div class="prof">
-                    <i class="fa-solid fa-school"></i>
-                    </div>
-                    <h1>COSC202</h1>
-                    <h4>OPERATING SYSTEMS 1</h4>
-                    <h4>Available Documents: 50</h4>
-                </div>
-
-                <div class="actions">
-                    <div class="ac_cont">
-                   <a href=""> <i class="fa-regular fa-folder"></i></a>
-                    </div>
-                </div>
-            </div>
-
-
-            <div class="school_card">
-                <div class="text">
-                    <div class="prof">
-                    <i class="fa-solid fa-school"></i>
-                    </div>
-                    <h1>COSC300</h1>
-                    <h4>COMPUTER HARDWARE</h4>
-                    <h4>Available Documents: 38</h4>
-                </div>
-
-                <div class="actions">
-                    <div class="ac_cont">
-                   <a href=""> <i class="fa-regular fa-folder"></i></a>
-                    </div>
-                </div>
-            </div>
-
-
-            <div class="school_card">
-                <div class="text">
-                    <div class="prof">
-                    <i class="fa-solid fa-school"></i>
-                    </div>
-                    <h1>ITGY301</h1>
-                    <h4>LINUX SYSTEMS</h4>
-                    <h4>Available Documents: 54</h4>
-                </div>
-
-                <div class="actions">
-                    <div class="ac_cont">
-                   <a href=""> <i class="fa-regular fa-folder"></i></a>
-                    </div>
-                </div>
-            </div>
-
-
-            <div class="school_card">
-                <div class="text">
-                    <div class="prof">
-                    <i class="fa-solid fa-school"></i>
-                    </div>
-                    <h1>COSC400</h1>
-                    <h4>OBJECT ORIENTED PROGRAMMING</h4>
-                    <h4>Available Documents: 38</h4>
-                </div>
-
-                <div class="actions">
-                    <div class="ac_cont">
-                   <a href=""> <i class="fa-regular fa-folder"></i></a>
-                    </div>
-                </div>
-            </div>
-
-            <div class="school_card">
-                <div class="text">
-                    <div class="prof">
-                    <i class="fa-solid fa-school"></i>
-                    </div>
-                    <h1>COSC403</h1>
-                    <h4>ARTIFICIAL INTELLIGENCE</h4>
-                    <h4>Available Documents: 48</h4>
-                </div>
-
-                <div class="actions">
-                    <div class="ac_cont">
-                   <a href=""> <i class="fa-regular fa-folder"></i></a>
-                    </div>
-                </div>
-            </div>
+    
+            <?php echo $courses?>
 
         </div>
     </div>
