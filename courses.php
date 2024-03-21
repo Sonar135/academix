@@ -30,7 +30,7 @@
 
         <div class="actions">
             <div class="ac_cont">
-           <a href="admin_drive.php"> <i class="fa-regular fa-folder"></i></a>
+           <a href="drive.php?course='.$course_code.'&school='.$school.'"> <i class="fa-regular fa-folder"></i></a>
             </div>
         </div>
     </div>
@@ -77,5 +77,8 @@
 
         </div>
     </div>
+    <?php
+      include "footer.php";
+    ?>
 </body>
 </html>

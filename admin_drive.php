@@ -226,5 +226,9 @@
     <button id="toggle">UPLOAD DOCUMENT</button>
         </div>
     </div>
+
+    <?php
+      include "footer.php";
+    ?>
 </body>
 </html>
