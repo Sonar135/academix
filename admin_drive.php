@@ -56,7 +56,7 @@
             $query=mysqli_query($conn, "INSERT into resources (file, filetype, date_created, display_name, school, course, file_size) values('$file_name' ,  '$type', NOW(), '$display_name', '$user_name', '$course', ' $fileSizeMB'  )");
 
             if($query){
-                header("location: admin_drive.php?course=$course");
+                header("location: admin_drive.php?course=$course#lock");
             }
         }
 
@@ -78,8 +78,13 @@
   $resources="";
   $get=mysqli_query($conn,"SELECT * from resources where course='$course' and school='$user_name'");
 
+  if(mysqli_num_rows($get)<1){
+    $resources='<h1>Empty Drive!</h1>';
+  }
+
   while($row=mysqli_fetch_array($get)){
     $display=$row["display_name"];
+    $id=$row["id"];
     $datetimeString = $row["date_created"];
 
     // Parse the datetime string
@@ -110,8 +115,6 @@
   if($file_type=="pdf"){
       $icon='<i class="fa-solid fa-file-pdf"></i>';
   }
-  }
-
 
   $resources.='
   <tr>
@@ -119,11 +122,15 @@
   <td id="ico">  <div class="name_ico"><div class="ico_box">'.$icon.'</div></div>  <h3 id="name">'.$display.' </h3> </td>
   <td><h3>'.$date.'</h3></td>
   <td><h3>'.$size.'mb</h3></td>
-  <td><div class="tb_ico"><i class="fa-solid fa-download"></i></div></td>
+  <td><a href="delete.php?id='.$id.'&course='.$course.'" class=""><div class="tb_ico"><i class="fa-solid fa-trash"></i></div></a></td>
  
  </tr>
  
   ';
+  }
+
+
+
 
 ?>
 
@@ -184,14 +191,14 @@
 
 
 
-    <div class="container sec1">
+    <div class="container sec1" id="lock">
         <div class="cent">
-            <div class="search_bar">
+            <!-- <div class="search_bar">
                 <input type="text" placeholder="Search">
 
                 
 
-            </div>
+            </div> -->
 
             <section>
 
@@ -202,7 +209,7 @@
           <th>Name</th>
           <th>Date Created</th>
           <th>File Size</th>
-          <th>Download</th>
+          <th>Delete</th>
 
         </tr>
       </thead>

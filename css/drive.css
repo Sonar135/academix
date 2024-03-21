@@ -24,7 +24,7 @@
   position:absolute;
   top:-8px;
   background: var(--accent);
-  right:200px;
+  right:210px;
 }
 
 
@@ -33,6 +33,10 @@
   font-size:20px;
 }
 
+
+.search_bar button:disabled{
+    background: var(--disabled);
+}
 
 .search_bar input{
     width:800px;
@@ -95,6 +99,11 @@ table{
 
   tr{
     height:60px;
+  }
+
+  .tbl-content h1{
+    margin-top:200px;
+    font-size:40px;
   }
   
 

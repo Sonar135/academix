@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Mar 21, 2024 at 09:37 PM
+-- Generation Time: Mar 22, 2024 at 12:16 AM
 -- Server version: 10.4.32-MariaDB
 -- PHP Version: 8.1.25
 
@@ -39,7 +39,8 @@ CREATE TABLE `library` (
 --
 
 INSERT INTO `library` (`id`, `school`, `course_code`, `course_title`) VALUES
-(1, 'babcock university', 'cosc200', 'vb.net');
+(1, 'babcock university', 'cosc200', 'vb.net'),
+(3, 'babcock university', 'cosc320', 'computer hardware');
 
 -- --------------------------------------------------------
 
@@ -63,7 +64,8 @@ CREATE TABLE `resources` (
 --
 
 INSERT INTO `resources` (`id`, `display_name`, `course`, `school`, `file`, `date_created`, `file_size`, `filetype`) VALUES
-(2, '2019/2020 exam', 'cosc200', 'babcock university', 'report.pdf', '2024-03-21 21:22:06', ' 0.05846118927002', 'pdf');
+(7, 'c++ assignmentt', 'cosc200', 'babcock university', 'report.pdf', '2024-03-22 00:13:57', ' 0.05846118927002', 'pdf'),
+(8, 'lol', 'cosc320', 'babcock university', 'report.pdf', '2024-03-22 00:15:14', ' 0.05846118927002', 'pdf');
 
 -- --------------------------------------------------------
 
@@ -145,13 +147,13 @@ ALTER TABLE `users`
 -- AUTO_INCREMENT for table `library`
 --
 ALTER TABLE `library`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 
 --
 -- AUTO_INCREMENT for table `resources`
 --
 ALTER TABLE `resources`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
 
 --
 -- AUTO_INCREMENT for table `schools`

@@ -28,6 +28,10 @@
   $resources="";
   $get=mysqli_query($conn,"SELECT * from resources where course='$course' and school='$school'");
 
+  if(mysqli_num_rows($get)<1){
+    $resources='<h1>Empty Drive!</h1>';
+  }
+
   while($row=mysqli_fetch_array($get)){
     $display=$row["display_name"];
     $datetimeString = $row["date_created"];
@@ -89,7 +93,7 @@
     $search=$_POST["query"];
 
 
-    header("location: drive.php?course=$course&school=$school&search=$search");
+    header("location: drive.php?course=$course&school=$school&search=$search#lock");
 
 
 
@@ -115,7 +119,7 @@
 
 
       if(mysqli_num_rows($search_query)<1){
-        $r='<h1>Not Found In Drive</h1>';
+        $r='<h1>Not Found In Drive!</h1>';
       }
   
   
@@ -206,12 +210,12 @@
 
 
 
-    <div class="container sec1">
+    <div class="container sec1" id="lock">
         <div class="cent">
            <form action="" method="post"> <div class="search_bar">
-                <input type="text" placeholder="Search in Drive" name="query">
+                <input id="my_input" type="text" placeholder="Search in Drive" name="query">
 
-                  <button name="search"><i class="fa-solid fa-magnifying-glass"></i></button>
+                  <button id="my_btn" name="search"><i class="fa-solid fa-magnifying-glass"></i></button>
                 
 
             </div></form>
