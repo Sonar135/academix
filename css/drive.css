@@ -1,0 +1,156 @@
+.sec1{
+    height:900px;
+}
+
+
+.search_bar{
+    width:100%;
+    height:90px;
+    display:flex;
+    justify-content: center;
+    align-items: center;
+}
+
+
+.search_bar input{
+    width:800px;
+    height:60px;
+    border-radius: 14px;
+    box-shadow: var(--shadow);
+    padding:12px;
+    font-weight:600;
+    font-size:20px;
+}
+
+.search_bar input::placeholder{
+    font-weight:600;
+    font-size:20px;
+}
+
+
+
+
+table{
+    width:100%;
+    table-layout: fixed;
+  }
+  .tbl-header{
+    background-color: var(--accent);
+    width:100%;
+   }
+  .tbl-content{
+    height:600px;
+    margin-top: 0px;
+    border: 1px solid rgba(255,255,255,0.3);
+  }
+  th{
+    padding: 20px 15px;
+    text-align: left;
+    font-weight: 500;
+    font-size: 12px;
+    color:white;
+    text-transform: uppercase;
+    text-align: center;
+  }
+  td{
+    /* padding: 15px; */
+    text-align: left;
+    vertical-align:middle;
+    font-weight: 300;
+    font-size: 12px;
+    color: black;
+    border-bottom: solid 1px rgba(255,255,255,0.1);
+  
+  }
+  
+  td h3{
+    color:black;
+    text-align: center;
+    font-weight:400;
+    font-size:18px;
+
+  }
+
+  tr{
+    height:60px;
+  }
+  
+
+  section{
+    margin: 50px auto;
+    width:100%;
+    animation: fade_in 1s;
+    box-shadow: var(--shadow);
+  }
+  
+  
+  /* follow me template */
+
+  
+  /* for custom scrollbar for webkit browser*/
+  
+  ::-webkit-scrollbar {
+      width: 6px;
+  } 
+  ::-webkit-scrollbar-track {
+      -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.3); 
+  } 
+  ::-webkit-scrollbar-thumb {
+      -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.3); 
+  }
+
+
+
+  #ico{
+    display:flex;
+    align-items:flex-end;
+  }
+
+  .name_ico{
+    height:48px;
+    width:48px;
+    margin:0 10px;
+    display:flex;
+    justify-content: center;
+    align-items: flex-end;
+  }
+
+  .ico_box{
+    width:26px;
+    height:26px;
+    display:flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+#name{
+    width:auto;
+    min-width:200px;
+}
+
+#name{
+    text-align: left;
+}
+
+  .ico_box i{
+    color: #0c85db;
+    font-size:26px;
+  }
+
+
+  .tb_ico{
+    width:40px;
+    height:40px;
+    border-radius: 50%;
+    display:flex;
+    justify-content: center;
+    align-items: center;
+    cursor:pointer;
+    margin:20px 41%;
+    box-shadow: var(--shadow);
+  }
+
+  .tb_ico i{
+    font-size:18px;
+    color: var(--accent);
+  }

@@ -1,0 +1,104 @@
+.sec1{
+    height:auto;
+    min-height:500px;
+  }
+  
+  .sec1 .cent{
+    display:flex;
+    flex-wrap: wrap;
+    height:auto;
+    min-height:500px;
+  }
+  
+  .sec1 h1{
+    margin-bottom:100px;
+  }
+  
+  .school_card{
+    width:350px;
+    height:360px;
+    box-shadow: var(--shadow);
+    animation: fade_in 1s;
+    margin:10px 24px;
+    /* border-radius:16px; */
+  }
+  
+  .text{
+    width:100%;
+    height:140px;
+    padding:20px 18px;
+    background: var(--disabled);
+    position:relative;
+  }
+  
+  .text h1{
+    text-align: left;
+    margin:16px 0;
+    color:white;
+  }
+  
+  .text h4{
+    text-align: left;
+    margin:6px 0;
+    color:white;
+    font-weight:600;
+  }
+  
+  #green{
+    background: #32ac716d;
+  }
+  
+  #blue{
+    background: #0278bd79;
+  }
+  
+  #purple{
+    background: #bd02ba79;
+  }
+  
+  #black{
+    background: #25242579;
+  }
+  
+  #grey{
+    background: #615d619c;
+  }
+  
+  .prof{
+    width:70px;
+    height:70px;
+    border-radius: 50%;
+    position:absolute;
+    right:0;
+    bottom:-30px;
+    background: white;
+    display:flex;
+    justify-content: center;
+    align-items: center;
+    box-shadow: var(--shadow);
+  }
+  
+  .prof i{
+    color: var(--accent);
+    font-size:32px;
+  }
+  
+  .actions{
+    width:100%;
+    height:60px;
+    margin-top:160px;
+    border-top:1px solid rgba(0, 0, 0, 0.112);
+  }
+  
+  .ac_cont{
+    width:80px;
+    height:100%;
+    float:right;
+  }
+  
+  .ac_cont i{
+    display:block;
+    margin:20px 30px;
+    font-size:30px;
+    color: var(--accent);
+  }

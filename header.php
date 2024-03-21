@@ -1,5 +1,16 @@
 
+<?php
+  ob_start();
+  session_start();
+  include 'connect.php';
+  if(isset($_SESSION["id"])){
+    $email=$_SESSION['email'];
+    $user_phone=$_SESSION['phone'];
+    $user_name=$_SESSION['Fname'];
+    $user_type=$_SESSION['user_type'];
+  }
 
+?>
 
 
 <!DOCTYPE html>
@@ -40,7 +51,51 @@
                   
                     
                       
+                  <?php
 
+
+            if(isset($_SESSION["id"])){
+             
+
+                if($user_type=='user'){
+                  echo '
+
+                  <li>    <a href="schools.php">Schools</a> </li>
+                  <li>    <a href="logout.php">Logout</a> </li>
+                  <li id="user">Student <div class="icon"><i class="fa-solid fa-user"></i></div></li>
+                 
+                  ';
+                }
+
+                else if($user_type== 'admin'){
+                  echo '
+
+                  <li>    <a href="dashboard.php">dashboard</a> </li>
+                  <li>    <a href="logout.php">Logout</a> </li>
+                  <li id="user">Admin <div class="icon"><i class="fa-solid fa-user"></i></div></li>
+                 
+                  ';
+                }
+        
+            }
+
+
+            else{
+              echo '
+              
+                  
+              <li>    <a href="auth.php">Student</a> </li>
+  
+              <li><a href="admin.php"> Admin</a></li>
+
+            
+              ';
+            }
+
+
+
+         
+            ?>
                
                     
 
@@ -56,18 +111,10 @@
                  
 
    
-                  
-                    <li>
-               
-                     
-                      
-                        
+                 
 
-                        
-                            <a href="auth.php">Login/Signup</a>
-                    
-                     
-                    </li>
+
+                   
                 </ul>
             </div>
         </div>

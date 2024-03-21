@@ -28,6 +28,15 @@
         }
     }
 
+
+    if(isset($_GET['error'])){
+        if($_GET['error']=='school_exists'){
+            echo '  <div class="message" id="message">
+            school already exists
+        </div>';
+        }
+    }
+
     if(isset($_GET['error'])){
         if($_GET['error']=='invalid_pass'){
             echo '  <div class="message" id="message">
@@ -89,13 +98,13 @@
         if(emptysignup($email, $fname,  $phone, $password, $confirm )!== false){
             
             
-            header("location: auth.php?error=emptyfield");
+            header("location: admin.php?error=emptyfield");
             exit();
  
         }
 
         if(invalid_email($email)!== false){
-            header("location: auth.php?error=invalidemail");
+            header("location: admin.php?error=invalidemail");
         //     echo '<div class="message" id="message">
         //     error: INVALID EMAIL
         // </div>';
@@ -103,19 +112,25 @@
         }
 
         if (invalid_password($password)) {
-            header("location: auth.php?error=invalid_pass");
+            header("location: admin.php?error=invalid_pass");
             exit();
  
         }
 
         if(pwd_match($password, $confirm)!== false){
       
-            header("location: auth.php?error=pwd_not_match");
+            header("location: admin.php?error=pwd_not_match");
             exit();
         }
 
-        if(email_exists($conn, $email)!== false){
-            header("location: auth.php?error=email_in_use");
+        if(school_email_exists($conn, $email)!== false){
+            header("location: admin.php?error=email_in_use");
+      
+            exit();
+        }
+
+        if(school_exists($conn, $fname)!== false){
+            header("location: admin.php?error=school_exists");
       
             exit();
         }
@@ -123,7 +138,7 @@
 
      
 
-        create_user($conn, $email, $fname,  $phone, $password );
+        create_school($conn, $email, $fname,  $phone, $password );
     
         
     }
@@ -132,26 +147,26 @@
 
 <?php
     if(isset($_POST['login'])){
-        $email=$_POST['email'];
+        $fname=$_POST['email'];
         $password=$_POST['password'];
 
 
 
         
 
-    if(emptylogin($email, $password)){
-        header("location: auth.php?error=empty_login");
+    if(emptylogin($fname, $password)){
+        header("location: admin.php?error=empty_login");
         exit();
     }
 
-    login($conn, $email, $password);
+    login_school($conn, $fname, $password);
     }
 
 
     if(isset($_GET['error'])){
         if($_GET['error']=='wrongLogin'){
             echo '  <div class="message" id="message">
-            username or password incorrect
+            institution name or password incorrect
         </div>';
         }
     }
@@ -159,7 +174,7 @@
     if(isset($_GET['error'])){
         if($_GET['error']=='empty_login'){
             echo '  <div class="message" id="message">
-            enter username and password
+            enter institution name and password
         </div>';
         }
     }
@@ -185,7 +200,7 @@
             <div class="container">
                 <div class="cent">
                 <div class="welcome_cont">
-                <h1>STUDENT</h1>
+                <h1>SCHOOL ADMIN</h1>
                 <span></span>
                 <div class="circle">
 
@@ -210,14 +225,14 @@
                 </div>
 
            <form action="" method="post">  <div class="right">
-                    <h1>SIGN UP</h1>
+                    <h1>REGISTER INSTITUTION</h1>
                     <div class="n_e">
-                        <input type="text" placeholder="Full Name" name="fname" id="sup_phone">
+                        <input type="text" placeholder="name of institution" name="fname" id="sup_phone">
                     </div>
 
                     <div class="n_e">
                         <input type="text" placeholder="phone no" name="phone">
-                        <input type="email" placeholder="Email" name="email">
+                        <input type="email" placeholder="Institution's Email" name="email">
                     </div>
 
    
@@ -248,7 +263,7 @@
                   
 
                     <div class="ne_log">
-                        <input type="email" placeholder="email" name="email">
+                        <input type="text" placeholder="institution" name="email">
                     </div>
 
                     <div class="ne_log">

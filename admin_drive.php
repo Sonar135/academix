@@ -42,14 +42,13 @@
     <div class="container sec1">
         <div class="cent">
             <div class="search_bar">
-                <input type="text" placeholder="Search in Drive">
+                <input type="text" placeholder="Search">
 
                 
 
             </div>
 
             <section>
-  <!--for demo wrap-->
 
   <div class="tbl-header">
     <table cellpadding="0" cellspacing="0" border="0">
