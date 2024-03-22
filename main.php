@@ -30,12 +30,22 @@
 
              <h4>THE STUDENT'S GUIDE TO SELF STUDY</h4>
 
-             <button>REGISTER NOW</button>
+             <?php
+             
+             if(!isset($_SESSION["id"])){
+                echo '  <a href="auth.php"> <button>REGISTER NOW</button></a> ';
+              }
+             ?>
+
+         
                 </div>
             </div>
         </div>
 
     </div>
+
+
+
 
 
 

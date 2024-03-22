@@ -29,9 +29,7 @@
   <img src="images\8-removebg-preview.png" alt="">
 </div>
     <div class="nav">
-      <div class="upper">
-        
-      </div>
+    
         <div class="nav_cont">
             <div class="logo_cont">
           <a href="main.php"> <h1>ACA-DEMIX</h1></a>  

@@ -41,7 +41,7 @@ if(isset($_GET["inserted"])){
             values('$user_name', '$code', '$title')");
 
             if($insert){
-                header("location: dashboard.php?inserted");
+                header("location: dashboard.php?inserted#lock");
             }
         }
 
@@ -60,6 +60,11 @@ if(isset($_GET["inserted"])){
         $course_code=$row["course_code"];
         $course_title=$row["course_title"];
 
+
+        $get_num=mysqli_query($conn, "SELECT * from resources where course='$course_code'");
+
+        $num=mysqli_num_rows($get_num);
+
         $courses.='
         <div class="school_card">
         <div class="text">
@@ -68,7 +73,7 @@ if(isset($_GET["inserted"])){
             </div>
             <h1>'.$course_code.'</h1>
             <h4>'.$course_title.'</h4>
-            <h4>Available Documents: 38</h4>
+            <h4>Available Documents: '.$num.'</h4>
         </div>
 
         <div class="actions">
@@ -131,7 +136,7 @@ if(isset($_GET["inserted"])){
 
     </div>
 
-    <div class="container sec1">
+    <div class="container sec1" id="lock">
         <h1>LIBRARY</h1>
         <div class="cent">
     

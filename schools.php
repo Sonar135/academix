@@ -9,6 +9,10 @@
     while($row=mysqli_fetch_array($get)){
         $school_name=$row["Fname"];
 
+        $get_num=mysqli_query($conn, "SELECT * from resources where  school='$school_name'");
+
+        $num=mysqli_num_rows($get_num);
+
 
         $schools.='   <div class="school_card">
         <div class="text">
@@ -17,7 +21,7 @@
             </div>
             <h1>'.$school_name.'</h1>
 
-            <h4>Available Documents: 38</h4>
+            <h4>Available Documents: '.$num.'</h4>
         </div>
 
         <div class="actions">

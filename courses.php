@@ -17,6 +17,11 @@
         $course_code=$row["course_code"];
         $course_title=$row["course_title"];
 
+
+        $get_num=mysqli_query($conn, "SELECT * from resources where course='$course_code' and school='$school'");
+
+        $num=mysqli_num_rows($get_num);
+
         $courses.='
         <div class="school_card">
         <div class="text">
@@ -25,7 +30,7 @@
             </div>
             <h1>'.$course_code.'</h1>
             <h4>'.$course_title.'</h4>
-            <h4>Available Documents: 38</h4>
+            <h4>Available Documents: '.$num.'</h4>
         </div>
 
         <div class="actions">
